@@ -1,0 +1,6 @@
+{
+  "name": "Lumina AI",
+  "description": "Unlimited high-quality text-to-image and generative video creation suite for creators and professionals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

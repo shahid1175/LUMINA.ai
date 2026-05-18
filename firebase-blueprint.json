@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "User profile information",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Unique user ID from Firebase Auth" },
+        "email": { "type": "string", "description": "User email address" },
+        "displayName": { "type": "string", "description": "User display name" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "When the account was created" }
+      },
+      "required": ["uid", "email"]
+    },
+    "GeneratedImage": {
+      "title": "Generated Image",
+      "description": "Records of AI generated images",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "ID of the user who generated the image" },
+        "prompt": { "type": "string", "description": "The prompt used to generate the image" },
+        "imageUrl": { "type": "string", "description": "URL or base64 of the generated image" },
+        "aspectRatio": { "type": "string", "description": "Aspect ratio used (1:1, 16:9, etc.)" },
+        "model": { "type": "string", "description": "Model used for generation" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Generation timestamp" }
+      },
+      "required": ["userId", "prompt", "imageUrl", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles"
+    },
+    "/images/{imageId}": {
+      "schema": "GeneratedImage",
+      "description": "Gallery of generated images"
+    }
+  }
+}
